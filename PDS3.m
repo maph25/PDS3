@@ -28,4 +28,10 @@ for k = 1 : (echo * 2);
     h3(1 , (k * delay)) = (1 - alpha ^ 2) * alpha ^ (k - 2);
 end
 %Graphs
+plot(y1,h1);
+title('H1 Impulse Response');
+plot(y2,h2);
+title('H2 Impulse Response');
+plot(y3,h3);
+title('H3 Impulse Response');
 
