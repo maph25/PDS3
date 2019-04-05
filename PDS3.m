@@ -27,11 +27,16 @@ h3(1 , 1) = - alpha;
 for k = 1 : (echo * 2);
     h3(1 , (k * delay)) = (1 - alpha ^ 2) * alpha ^ (k - 2);
 end
-%Graphs
+%Graphs impulse response
 plot(y1,h1);
 title('H1 Impulse Response');
 plot(y2,h2);
 title('H2 Impulse Response');
 plot(y3,h3);
 title('H3 Impulse Response');
-
+%Fourier Transform of impulse response
+x_fft = abs(fft(x, length(x)));
+h1_fft = abs(fft(h1, length(x)));
+h2_fft = abs(fft(h2, length(x)));
+h3_fft = abs(fft(h3, length(x)));
+w = linspace(0, fs/2, length(x) / 2);
