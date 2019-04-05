@@ -40,3 +40,10 @@ h1_fft = abs(fft(h1, length(x)));
 h2_fft = abs(fft(h2, length(x)));
 h3_fft = abs(fft(h3, length(x)));
 w = linspace(0, fs/2, length(x) / 2);
+%Graphs of Fourier Transform of impulse response
+plot(w, h1_fft(1 : lenght(x) / 2), 'Linewidth', 4);
+title('H1 Fourier Transform');
+plot(w, h2_fft(1 : lenght(x) / 2), 'Linewidth', 4);
+title('H2 Fourier Transform');
+plot(w, h3_fft(1 : lenght(x) / 2), 'Linewidth', 4);
+title('H3 Fourier Transform');
