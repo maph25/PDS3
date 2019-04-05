@@ -6,7 +6,7 @@ x_sound = audioplayer(x, fs);
 delay = 2000;
 echo = 5;
 alpha = 0.5;
-size = delay * eco;
+size = delay * echo;
 %Equations
 y1 = 1 : size;
 y2 = 1 : size; 
@@ -47,3 +47,16 @@ plot(w, h2_fft(1 : lenght(x) / 2), 'Linewidth', 4);
 title('H2 Fourier Transform');
 plot(w, h3_fft(1 : lenght(x) / 2), 'Linewidth', 4);
 title('H3 Fourier Transform');
+%Filters for echoed signal
+y1_echo = filter(h1, -1, x);
+y2_echo = filter(h2, -1, x);
+y3_echo = filter(h3, -1, x);
+%Graphs of signals
+plot(x);
+title('Original signal');
+plot(y1_echo);
+title('Y1 Echoed');
+plot(y2_echo);
+title('Y2 Echoed');
+plot(y3_echo);
+title('Y3 Echoed');
